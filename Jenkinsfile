@@ -20,11 +20,11 @@ pipeline {
                 sh "mvn test"
             }
         }
-#under tools section add this environment
+
 environment {
         SCANNER_HOME=tool 'sonar-scanner'
     }
-# in stages add this
+
 stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
